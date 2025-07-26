@@ -1,0 +1,736 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+  line-height: 1.5;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* App Styles */
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Home Page Styles - Mobile First */
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.home-header h1 {
+  font-size: 1.875rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home-header p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 280px;
+}
+
+.home-btn {
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-align: center;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-btn.primary {
+  background: #00e1f5;
+  color: #1a202c;
+}
+
+.home-btn.secondary {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+.home-btn:hover,
+.home-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.home-preview {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  max-width: 100%;
+  width: 100%;
+  max-width: 500px;
+}
+
+.home-preview h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.steps-list {
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-left: 1rem;
+}
+
+.steps-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Digital Flyer Styles - Mobile Optimized */
+.digital-flyer {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Header Styles - Mobile First */
+.flyer-header {
+  position: relative;
+  background: linear-gradient(135deg, #00e1f5 0%, #00b8cc 100%);
+  padding: 1.5rem 1rem 1.25rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.header-bg-animation {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+  }
+}
+
+.logo-container {
+  position: relative;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 0.75rem;
+  background: white;
+  border-radius: 50%;
+  padding: 0.375rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.header-actions {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  gap: 0.375rem;
+  z-index: 3;
+}
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  touch-action: manipulation;
+}
+
+.action-btn:hover,
+.action-btn:active {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.action-icon {
+  width: 18px;
+  height: 18px;
+  color: white;
+}
+
+/* Food Showcase - Mobile Optimized */
+.food-showcase {
+  padding: 1.5rem 1rem;
+}
+
+.showcase-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  color: #1a202c;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.875rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.food-card {
+  background: white;
+  border-radius: 0.875rem;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.food-card:hover,
+.food-card:focus,
+.food-card:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  outline: none;
+}
+
+.food-image-container {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+.food-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.food-card:hover .food-image,
+.food-card:active .food-image {
+  transform: scale(1.03);
+}
+
+.food-overlay {
+  position: absolute;
+  top: 0.375rem;
+  right: 0.375rem;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.rating-star {
+  width: 10px;
+  height: 10px;
+  fill: #fbbf24;
+  color: #fbbf24;
+}
+
+.food-info {
+  padding: 0.75rem;
+}
+
+.food-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #1a202c;
+  line-height: 1.2;
+}
+
+.food-description {
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.3;
+}
+
+/* About Section - Mobile Optimized */
+.about-section {
+  background: #f8fafc;
+  padding: 1.5rem 1rem;
+}
+
+.about-content {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.875rem;
+  color: #1a202c;
+}
+
+.about-text {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Info Cards - Mobile Stacked */
+.info-cards {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.info-card {
+  background: white;
+  border-radius: 0.875rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  touch-action: manipulation;
+}
+
+.location-card {
+  cursor: pointer;
+}
+
+.info-card:hover,
+.info-card:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #00e1f5, #00b8cc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-icon .icon {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.125rem;
+  color: #1a202c;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 0.125rem;
+  font-weight: 500;
+}
+
+.card-subtext {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* CTA Section - Mobile Optimized */
+.cta-section {
+  padding: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.primary-cta {
+  width: 100%;
+  background: linear-gradient(135deg, #00e1f5, #00b8cc);
+  color: white;
+  border: none;
+  border-radius: 0.875rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  min-height: 52px;
+  touch-action: manipulation;
+}
+
+.primary-cta:hover,
+.primary-cta:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0, 225, 245, 0.3);
+}
+
+.cta-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.social-links {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.social-text {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.social-link {
+  color: #00b8cc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  touch-action: manipulation;
+}
+
+.social-link:hover,
+.social-link:active {
+  text-decoration: underline;
+}
+
+/* Footer */
+.flyer-footer {
+  background: #1a202c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+/* QR Generator Styles - Mobile First */
+.qr-generator {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.qr-container {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  max-width: 100%;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.qr-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+  line-height: 1.2;
+}
+
+.qr-description {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  font-size: 0.875rem;
+}
+
+.qr-url-display {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.url-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.url-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  background: #f9fafb;
+  touch-action: manipulation;
+}
+
+.generate-btn {
+  background: linear-gradient(135deg, #00e1f5, #00b8cc);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  min-height: 48px;
+  touch-action: manipulation;
+}
+
+.generate-btn:hover,
+.generate-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0, 225, 245, 0.3);
+}
+
+.qr-result {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.5rem;
+}
+
+.qr-code-container {
+  margin-bottom: 1.25rem;
+}
+
+.qr-code-image {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+.download-btn:hover,
+.download-btn:active {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.qr-instructions {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Tablet Styles */
+@media (min-width: 640px) {
+  .home-header h1 {
+    font-size: 2.25rem;
+  }
+
+  .home-header p {
+    font-size: 1.125rem;
+  }
+
+  .home-actions {
+    flex-direction: row;
+    max-width: 400px;
+  }
+
+  .logo-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .showcase-title {
+    font-size: 1.75rem;
+  }
+
+  .food-grid {
+    max-width: 500px;
+    gap: 1rem;
+  }
+
+  .food-image-container {
+    height: 120px;
+  }
+
+  .info-cards {
+    flex-direction: row;
+    max-width: 500px;
+  }
+
+  .cta-section,
+  .about-content,
+  .info-cards {
+    max-width: 500px;
+  }
+
+  .qr-container {
+    max-width: 500px;
+    padding: 2rem;
+  }
+
+  .qr-title {
+    font-size: 1.75rem;
+  }
+
+  .qr-code-image {
+    max-width: 250px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .home-header h1 {
+    font-size: 3rem;
+  }
+
+  .home-header p {
+    font-size: 1.25rem;
+  }
+
+  .digital-flyer {
+    max-width: 480px;
+  }
+
+  .home-preview {
+    max-width: 600px;
+  }
+}
+
+/* Touch and Accessibility Improvements */
+@media (hover: none) and (pointer: coarse) {
+  .food-card:hover {
+    transform: none;
+  }
+
+  .food-card:active {
+    transform: scale(0.98);
+  }
+
+  .action-btn:hover {
+    transform: none;
+  }
+
+  .action-btn:active {
+    transform: scale(0.95);
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo-image,
+  .food-image,
+  .qr-code-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Landscape Mobile Optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+  .flyer-header {
+    padding: 1rem 1rem 0.75rem;
+  }
+
+  .logo-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .food-showcase {
+    padding: 1rem;
+  }
+
+  .about-section {
+    padding: 1rem;
+  }
+}
