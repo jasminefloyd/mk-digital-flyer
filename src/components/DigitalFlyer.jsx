@@ -33,9 +33,6 @@ export default function DigitalFlyer() {
           <img src="./src/assets/meryls-kitchen-logo.jpg" alt="Meryl's Kitchen Logo" className="logo-image" />
         </figure>
         <div className="header-actions">
-          <button className="action-btn favorite-btn" aria-label="Add to favorites">
-            <Heart className="action-icon" />
-          </button>
           <button className="action-btn share-btn" onClick={handleShare} aria-label="Share">
             <Share2 className="action-icon" />
           </button>
